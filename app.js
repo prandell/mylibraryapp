@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
+require('dotenv').config()
+
 const app = express();
 
 // use the body-parser middleware, which parses request bodies into req.body
@@ -13,6 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.send("<H1>Library System</H1>");
 });
+
+require('./models');
 
 // handle author-management related requests
 // first import the author router
